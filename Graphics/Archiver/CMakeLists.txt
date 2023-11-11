@@ -180,7 +180,7 @@ if (MINGW AND CMAKE_CXX_COMPILER_ID MATCHES "GNU")
     file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/export.map
         "{ global: *GetArchiverFactory*; local: *; };"
     )
-    target_link_options(Diligent-Archiver-shared PRIVATE LINKER:--version-script=export.map)
+    target_link_options(Diligent-Archiver-shared PRIVATE LINKER:--version-script=${CMAKE_CURRENT_BINARY_DIR}/export.map)
 endif()
 
 source_group("src" FILES ${SOURCE})

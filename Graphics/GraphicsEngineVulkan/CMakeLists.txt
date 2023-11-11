@@ -290,7 +290,7 @@ if (MINGW AND CMAKE_CXX_COMPILER_ID MATCHES "GNU")
         "{ global: *GetEngineFactoryVk*; local: *; };"
     )
     # set_target_properties does not append link flags, but overwrites them
-    target_link_options(Diligent-GraphicsEngineVk-shared PRIVATE LINKER:--version-script=export.map)
+    target_link_options(Diligent-GraphicsEngineVk-shared PRIVATE LINKER:--version-script=${CMAKE_CURRENT_BINARY_DIR}/export.map)
 endif()
 
 if(PLATFORM_WIN32)
