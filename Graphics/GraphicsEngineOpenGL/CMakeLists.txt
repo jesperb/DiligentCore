@@ -236,7 +236,7 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     endif()
 endif()
 
-if (MINGW_BUILD)
+if (MINGW AND CMAKE_CXX_COMPILER_ID MATCHES "GNU")
     # Restrict export to GetEngineFactoryOpenGL
     file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/export.map
         "{ global: *GetEngineFactoryOpenGL*; local: *; };"

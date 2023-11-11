@@ -178,7 +178,7 @@ function(set_common_target_properties TARGET)
             C_STANDARD 11 # MSVC requires legacy C standard
         )
 
-        if(NOT MINGW_BUILD)
+        if(NOT MINGW)
             # Do not disable extensions when building with MinGW!
             set_target_properties(${TARGET} PROPERTIES
                 CXX_EXTENSIONS OFF

@@ -175,9 +175,8 @@ if(PLATFORM_WIN32 OR PLATFORM_UNIVERSAL_WINDOWS)
     endif()
 endif()
 
-if(${CMAKE_GENERATOR} MATCHES "MinGW")
+if(MINGW)
     message("Building with MinGW")
-    set(MINGW_BUILD TRUE CACHE INTERNAL "Building with MinGW")
 endif()
 
 if(PLATFORM_WIN32)

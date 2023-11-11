@@ -284,7 +284,7 @@ PUBLIC
     ${PUBLIC_DEPENDENCIES}
 )
 
-if (MINGW_BUILD)
+if (MINGW AND CMAKE_CXX_COMPILER_ID MATCHES "GNU")
     # Restrict export to GetEngineFactoryVk
     file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/export.map
         "{ global: *GetEngineFactoryVk*; local: *; };"
