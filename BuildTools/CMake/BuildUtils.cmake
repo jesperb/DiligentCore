@@ -325,7 +325,7 @@ function(install_combined_static_lib COMBINED_LIB_NAME LIBS_LIST CUSTOM_TARGET_N
 
         if(PLATFORM_WIN32)
             # do NOT use stock ar on MinGW
-            find_program(AR NAMES x86_64-w64-mingw32-gcc-ar)
+            find_program(AR NAMES x86_64-w64-mingw32-gcc-ar ${CMAKE_AR})
         else()
             set(AR ${CMAKE_AR})
         endif()
